@@ -1,0 +1,138 @@
+.sectionCourses
+    width: 100%
+    height: auto
+    padding: 10px
+    box-sizing: border-box
+
+    & .sectionCorusesContainer
+        width: 100%
+        margin: 0 auto
+
+        @media screen and (min-width: $medium-screen)
+            max-width: 1000px
+            padding: 20px
+                
+
+    & .containerTitle
+        width: 100%
+        height: auto
+        margin: 0 auto
+        display: flex
+        gap: 20px
+        flex-direction: column
+        align-items: center
+
+        @media screen and (min-width: $medium-screen)
+            flex-direction: row
+
+        & > h1 
+            font-size: 1.5rem
+
+        & .containerButtonNext
+            width: 100px
+            height: 25px
+            display: none
+
+            @media screen and (min-width: $medium-screen)
+                display: flex
+                gap: 10px
+
+            & > button
+                border-radius: 50%
+                border: 2px solid $primary-color
+                background: transparent
+                cursor: pointer
+                &:hover 
+                    border: 2.2px solid  $primary-color
+                    
+
+                & > i 
+                    font-size: .7rem
+                    color: $primary-color
+
+    & .containerParagraph
+        width: 100%
+        margin: 0 auto
+        margin-bottom: 50px
+
+        & > p 
+            color: $font-color-secundary
+            font-size: .9rem
+
+    & .containerCard
+        width: 100%
+        height: auto
+        margin: 0 auto
+
+        & .CardCourses
+            width: 220px
+            height: 290px
+            margin-top: 20px
+            border-top-left-radius: 1rem
+            border-top-right-radius: 1rem
+            background: $background-primary-color
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.344)
+            
+            & .containerImg
+                width: 220px
+                height: 120px
+                position: relative
+
+                & > img
+                    object-fit: cover
+                    border-top-left-radius: 1rem
+                    border-top-right-radius: 1rem
+
+        & .containerCardTitle
+            width: 90%
+            margin: 0 auto
+    
+
+            & .containerInfo
+                display: flex
+                align-items: center
+                justify-content: space-between
+                
+                & > h3 
+                    font-size: .8rem
+
+                & > span 
+                    font-size: .8rem
+                    color: $color-font-star-card
+
+            & > p 
+                font-size: .7rem
+                color: $font-color-secundary
+                margin-bottom: 30px
+
+            & .ContainerPriceButton
+                display: flex
+                justify-content: space-between
+                margin-bottom: 1rem
+
+                & .containerPreceSubscription
+                    width: 50%
+                    display: flex
+                    justify-content: center
+                    flex-direction: column
+
+                    & .price
+                        font-size: .8rem
+                        font-weight: 700
+
+                    & > span 
+                        font-size: .6rem
+                        font-weight: 700
+
+                & > button 
+                    width: auto
+                    height: 30px
+                    color: $font-color-third
+                    background-color: $primary-color
+                    border: none
+                    border-radius: 1rem
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.344)
+                    cursor: pointer
+                    &:hover 
+                        background-color: $background-secundary-color
+                        font-weight: 700
