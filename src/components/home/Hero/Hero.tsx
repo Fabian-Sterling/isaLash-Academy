@@ -26,7 +26,7 @@ export const Hero = () => {
                     <div className={`${styles.videoContainer} ${mostrarVideo ? styles.visible : ''}`}>
                         <button className={styles.btnClose} onClick={cerrarVideo}>X</button>
                         <video controls controlsList="nodownload"> 
-                            <source src='/video/isaLashs.mp4.mp4' type='video/mp4'/>
+                            <source src='/' type='video/mp4'/>
                             
                         </video>
 
