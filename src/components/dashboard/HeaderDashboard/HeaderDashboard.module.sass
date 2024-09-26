@@ -1,0 +1,90 @@
+.Header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    padding: 10px 20px
+    background-color: rgba($background-color-header, 0.9)
+    z-index: 10
+    box-sizing: border-box
+    
+
+    & .containerLogo
+        width: 150px
+        height: 50px
+        position: relative
+
+        & img
+            object-fit: cover
+
+    & .searchContainer
+        width: 59%
+        align-items: center
+        border: 1px solid $primary-color
+        border-radius: 23px
+        background-color: #fff
+        display: none
+
+        @media screen and (min-width: $medium-screen)
+            display: flex
+
+        @media screen and (min-width: $large-screen1)
+            width: 40%
+
+        & form
+            width: 100%
+            display: flex
+
+            & .searchBox
+                width: 80%
+                padding: 5px 10px
+                border: none
+                border-radius: 23px
+                text-align: center
+
+                &::placeholder
+                    color: $primary-color
+
+                &:focus
+                    outline: none
+                
+
+            & .searchButton
+                padding: 5px 10px
+                display: flex
+                color: $primary-color
+                background: none
+                border: none
+                cursor: pointer
+    
+    & .menuContainer
+        position: relative
+
+        & .menuButton
+            background: none
+            border: none
+            cursor: pointer
+            display: flex
+            align-items: center
+
+            & svg 
+                margin-right: 0.5rem
+
+        & .menuDropdown
+            position: absolute
+            top: 100%
+            right: 0
+            background-color: #fff
+            border: 1px solid #ccc
+            border-radius: 4px
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+            display: none
+            flex-direction: column
+
+            & .menuDropdown a 
+                padding: 10px 20px
+                text-decoration: none
+                color: #333

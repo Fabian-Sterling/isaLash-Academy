@@ -20,7 +20,9 @@ export default function NotFound () {
 
                     <p>Lo sentimos, la pagina que estas buscando no existe.</p>
 
-                    <button>HOME</button>
+                    <button>
+                        <a href="/">Home</a>
+                    </button>
                 </div>
             </div>
         </main>

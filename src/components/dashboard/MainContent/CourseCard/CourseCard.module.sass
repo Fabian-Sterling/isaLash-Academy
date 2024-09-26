@@ -1,0 +1,89 @@
+.courseCard
+    position: relative
+    flex: 0 0 200px
+    border: 1px solid #ddd
+    border-radius: 8px
+    overflow: hidden
+    background: #fff
+    text-align: center
+    cursor: pointer
+    transition: transform 0.2s, box-shadow 0.2s
+
+    &:hover
+        transform: translateY(-5px)
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+
+    & .containerImg
+        width: 200px
+        height: 200px
+        position: relative
+        z-index: 1
+
+        & img
+            object-fit: cover
+            border-top-left-radius: 8px
+            border-top-right-radius: 8px
+            box-shadow: 0 0 10px #ff008a
+
+    & .courseInfo
+        padding: 1rem
+        position: relative
+
+        h3
+            font-size: 1rem
+            margin: 0.5rem 0
+            color: #0070f3
+
+        p
+            color: #666
+
+    /* Contenedor de botones */
+    & .buttonsOverlay
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        display: flex
+        flex-direction: column
+        gap: 0.5rem
+        opacity: 0
+        visibility: hidden
+        transition: opacity 0.3s ease, visibility 0.3s ease
+        z-index: 2
+
+    /* Mostrar botones al interactuar */
+    & .courseCard:hover .buttonsOverlay,
+    .buttonsOverlay:hover,
+    .courseCard:focus .buttonsOverlay
+        opacity: 1
+        visibility: visible
+
+    /* Estilos para los botones */
+    & .button
+        padding: 0.5rem 1rem
+        background-color: rgba(0, 112, 243, 0.9) // #0070f3 con opacidad
+        color: #fff
+        text-decoration: none
+        border-radius: 5px
+        font-size: 0.9rem
+        text-align: center
+        transition: background-color 0.3s ease
+
+        display: flex
+        align-items: center
+        justify-content: center
+
+        &:hover
+            background-color: rgba(0, 112, 243, 1)
+
+    /* Estilo diferente para el botón "Iniciar Curso" si se desea */
+    & .buttonStart
+        background-color: rgba(255, 0, 138, 0.9) // Color diferente
+        &:hover
+            background-color: rgba(255, 0, 138, 1)
+
+    /* Mostrar visibilidad en dispositivos táctiles al hacer clic */
+    @media (hover: none) and (pointer: coarse)
+        .buttonsOverlay
+            opacity: 1
+            visibility: visible

@@ -1,0 +1,121 @@
+.hero
+    padding: 1rem
+
+    @media screen and (min-width: $large-screen1)
+        margin: 3rem
+
+    & .heroContent
+        
+
+        & .welcomeMessage
+            text-align: center
+            margin-bottom: 1.5rem
+
+            @media screen and (min-width: $medium-screen-header-hamburger)
+                display: flex
+                justify-content: space-between
+                align-items: center
+
+            & h1
+                font-size: 2.5rem
+                color: #333
+                font-weight: 700
+
+            & .findCourseButton
+                height: 40px
+                background-color: $primary-color
+                color: #fff
+                border: none
+                padding: 0.75rem 2rem
+                font-size: 1rem
+                border-radius: 5px
+                cursor: pointer
+                margin-top: 1rem
+                transition: background-color 0.3s ease
+
+                @media screen and (min-width: $medium-screen-header-hamburger)
+                    margin-right: 3rem
+
+                &:hover
+                    background-color: #e03570
+
+    & .courseTaking
+        width: 100%
+        margin-top: 2rem
+
+        & h2
+            font-size: 1.75rem
+            color: #333
+            margin-bottom: 1rem
+
+        & .carouselContainer 
+            
+            position: relative
+            display: flex
+            align-items: center
+
+            & .prevButton, .nextButton
+                background: none
+                border: none
+                font-size: 2rem
+                cursor: pointer
+                z-index: 1
+                padding: 0 1rem
+                display: none
+
+                &:hover
+                    color: $primary-color
+
+                @media screen and (min-width: $large-screen1)
+                    display: flex
+                    
+            
+            & .prevButton
+                left: 0
+
+            & .nextButton 
+                right: 0
+
+
+            & .coursesContainer
+                width: 100%
+                display: flex
+                overflow-x: auto
+                scroll-behavior: smooth
+                scroll-snap-type: x mandatory
+                gap: 10px
+
+                & .courseCard
+                    scroll-snap-align: center
+                    border-radius: 8px
+                    background-color: #fff
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+                    text-align: center
+                    cursor: pointer
+
+                    &:hover
+                        transform: translateY(-5px)
+
+                    & .containerImg
+                        width: 270px
+                        height: 200px
+                        position: relative
+                        z-index: 1
+
+                        & img
+                            object-fit: cover
+                            border-top-left-radius: 8px
+                            border-top-right-radius: 8px
+                            box-shadow: 0 0 10px -5px #ff008a
+
+                    & .courseInfo
+                        padding: 1rem
+
+                        & h3
+                            font-size: 1.25rem
+                            color: #333
+                            margin-bottom: 0.5rem
+
+                        & p
+                            font-size: 1rem
+                            color: #666

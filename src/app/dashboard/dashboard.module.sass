@@ -1,0 +1,15 @@
+.main
+    display: flex
+
+    & .sectionContent
+        width: 100%
+
+        @media screen and (min-width: $large-screen1)
+            width: 78%
+
+    & aside 
+        display: none
+        position: relative
+
+        @media screen and (min-width: $large-screen1)
+            display: flex

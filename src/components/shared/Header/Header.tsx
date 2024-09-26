@@ -68,11 +68,11 @@ export const Header = () => {
 
                 <div className={styles.buttons}>
                     <button>
-                        <Link href="/pages/Login"> <span>Acceder</span> </Link>
+                        <Link href="/auth/SignIn"> <span>Acceder</span> </Link>
                     </button>
 
                     <button>
-                        <a href="/">Regístrate</a>
+                        <a href="/auth/Register">Regístrate</a>
                     </button>
                 </div>
             </nav>

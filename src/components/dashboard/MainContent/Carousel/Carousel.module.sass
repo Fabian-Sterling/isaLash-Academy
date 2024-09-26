@@ -1,0 +1,31 @@
+.carouselContainer
+    display: flex
+    align-items: center
+    overflow: hidden
+    position: relative
+
+    & .scrollButton
+        background: none
+        border: none
+        font-size: 2rem
+        cursor: pointer
+        z-index: 1
+        padding: 0 1rem
+        display: none
+
+        &:hover
+            color: $primary-color
+
+        @media screen and (min-width: $large-screen1)
+                    display: flex
+
+    & .carousel
+        width: 100%
+        display: flex
+        overflow-x: auto
+        scroll-behavior: smooth
+        padding: 1rem 0
+        gap: 10px
+
+        &::-webkit-scrollbar
+            display: none

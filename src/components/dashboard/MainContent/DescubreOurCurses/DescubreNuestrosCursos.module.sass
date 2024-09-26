@@ -1,0 +1,83 @@
+.section
+    padding: 1rem
+
+    @media screen and (min-width: $large-screen1)
+        margin: 3rem
+
+    & .courseCard
+        flex: 0 0 200px
+        border: 1px solid #ddd
+        border-radius: 8px
+        overflow: hidden
+        background: #fff
+        text-align: center
+        cursor: pointer
+        position: relative
+
+        &:hover
+            transform: translateY(-5px)
+
+        &  .containerImg
+                width: 200px
+                height: 200px
+                position: relative
+                z-index: 1
+
+                & img
+                    object-fit: cover
+                    border-top-left-radius: 8px
+                    border-top-right-radius: 8px
+                    box-shadow: 0 0 10px #ff008a
+
+        & .courseInfo
+            padding: 1rem
+
+            h3
+                font-size: 1rem
+                margin: 0.5rem 0
+                
+            p
+                color: #666
+
+        & .buttonsOverlay
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: rgba(0, 0, 0, 0.6)
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            opacity: 0
+            transition: opacity 0.3s ease, transform 0.3s ease
+            z-index: 2
+            
+
+            & .button
+                padding: 0.5rem 1rem
+                margin: 0.5rem 0
+                background-color: #ff6b6b
+                color: #fff
+                text-decoration: none
+                border: none
+                border-radius: 4px
+                cursor: pointer
+                transition: background-color 0.3s ease, transform 0.2s ease
+                font-size: 1rem
+                width: 150px
+                text-align: center
+
+                &:hover
+                    background-color: #ff4757
+                    transform: scale(1.05)
+
+                &:focus
+                    outline: 2px solid #fff
+
+        &:hover .buttonsOverlay
+            opacity: 1
+            transform: translateY(0)
+            pointer-events: auto
+

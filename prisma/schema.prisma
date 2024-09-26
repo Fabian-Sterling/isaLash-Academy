@@ -1,50 +1,65 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-generator client {
-  provider = "prisma-client-js"
-}
+// schema.prisma
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Curso {
+  id          String      @id @default(cuid())
+  nombre      String      @unique
+  descripcion String
+  videoUrl    String?
+  imageUrl    String?     
+  views       Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  clases      Clase[]     // Relación con las clases dentro del curso
+  usuarioId   String      // Usuario creador o profesor del curso
+  usuario     User        @relation(fields: [usuarioId], references: [id])
+}
+
+model Clase {
+  id          String      @id @default(cuid())
+  nombre      String  
+  descripcion String  
+  contenido   String  
+  videoUrl    String? 
+  cursoId     String  
+  curso       Curso       @relation(fields: [cursoId], references: [id])
+  createdAt   DateTime @default(now())
+
+  @@unique([cursoId, nombre])
+}
+
 model User {
-  id        Int       @id @default(autoincrement())
-  email     String    @unique
-  password  String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  accounts  Account[]
-  sessions  Session[]
+  id             String          @id @default(cuid())
+  name           String?
+  email          String          @unique
+  password       String
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  subscriptions  Subscription[]
+  cursos         Curso[]
 }
 
-model Account {
-  id                 Int       @id @default(autoincrement())
-  userId             Int
-  providerType       String
-  providerId         String
-  providerAccountId  String
-  refreshToken       String?
-  accessToken        String?
-  accessTokenExpires DateTime?
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
-
-  user User @relation(fields: [userId], references: [id])
+model Subscription {
+  id         String     @id @default(cuid())
+  user       User       @relation(fields: [userId], references: [id])
+  userId     String
+  startDate  DateTime
+  endDate    DateTime?
+  status     SubscriptionStatus
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
 }
 
-model Session {
-  id           Int      @id @default(autoincrement())
-  sessionToken String   @unique
-  userId       Int
-  expires      DateTime
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id])
+enum SubscriptionStatus {
+  ACTIVE
+  INACTIVE
+  CANCELLED
 }

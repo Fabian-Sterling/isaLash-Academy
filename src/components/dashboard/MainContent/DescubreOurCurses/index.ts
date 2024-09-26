@@ -1,0 +1,1 @@
+export { DescubreOurCurses } from './DescubreOurCurses'

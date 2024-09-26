@@ -1,0 +1,57 @@
+.progressCard 
+    position: fixed
+    top: 0
+    right: 0
+    width: 20%
+    height: 100vh
+    padding: 20px
+    padding-top: 6rem
+    display: flex
+    flex-direction: column
+
+    & .containerProgress
+        background-color: #fff
+        display: flex
+        align-items: center
+        gap: 10px
+        margin-bottom: 10px
+
+        & svg
+            padding: 1rem
+
+        & .numberCourses
+            padding: 0.3rem
+            & h2 
+                font-size: 12px
+                margin: 0
+            
+            & h3 
+                font-size: 10px
+                margin: 0
+                color: $primary-color
+
+    & .progressSection 
+        margin-bottom: 50px
+
+        & .progressLabel 
+            display: flex
+            justify-content: space-between
+            margin-bottom: 8px
+            font-size: 14px
+            color: #555
+        
+
+        & .progressBar 
+            background-color: #eacbdd
+            border-radius: 5px
+            height: 10px
+            overflow: hidden
+
+            .progressFill 
+                height: 100%
+                background-color: $primary-color
+                transition: width 0.4s ease
+            
+        
+    
+

@@ -1,0 +1,1 @@
+export { LatestCoursesLaunched } from './LatestCoursesLaunched'

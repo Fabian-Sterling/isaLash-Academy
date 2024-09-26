@@ -1,0 +1,1 @@
+export { MostViewedCourses } from './MostViewedCourses'
